@@ -8,7 +8,7 @@ const port = process.env.PORT || 3030;
 
 app.use(
     cors({
-        origin: "http://obscure-fortress-88963.herokuapp.com/",
+        origin: "http://obscure-fortress-88963.herokuapp.com",
         credentials: true
     })
 );
