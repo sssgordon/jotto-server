@@ -18,11 +18,5 @@
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "supertest": "^3.0.0"
-  },
-  "description": "## Installing 1. Clone or fork the course repository found at [https://github.com/flyrightsister/udemy-react-testing-projects] 2. `cd` into the `random-word-server` directory (where this README is located). 3. Run `npm install`",
-  "bugs": {
-    "url": "https://github.com/flyrightsister/udemy-react-testing-projects/issues"
-  },
-  "homepage": "https://github.com/flyrightsister/udemy-react-testing-projects#readme",
-  "main": "server.js"
+  }
 }
