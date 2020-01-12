@@ -1,8 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
+const serverless = require("serverless-http");
 
 const app = express();
+
+const router = express.Router();
 
 const port = process.env.PORT || 3030;
 
@@ -18,7 +21,7 @@ const fileContents = fs.readFileSync("./five-letter-words.json", "utf-8");
 const words = JSON.parse(fileContents);
 const { fiveLetterWords } = words;
 
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
     // select a random word
     const word =
         fiveLetterWords[Math.floor(Math.random() * fiveLetterWords.length)];
@@ -27,6 +30,8 @@ app.get("/", (req, res) => {
     res.send(word);
 });
 
+app.use("/.netlify/functions/server", router);
+
 app.listen(port, () => console.log(`Word server listening on port ${port}!`));
 
-module.exports = app;
+module.exports.handler = serverless(app);
